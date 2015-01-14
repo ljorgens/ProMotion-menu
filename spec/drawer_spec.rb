@@ -65,4 +65,17 @@ describe ProMotion::Menu::Drawer do
     menu.center_controller.should == @content
   end
 
+  it "sends the correct PM view lifecycle methods" do
+    menu = ProMotion::Menu::Drawer.new @content, left: @left, right: @right, shadow: false
+    @left.got_will_appear.nil?.should == true
+    @left.got_did_appear.nil?.should == true
+
+    menu.show(:left)
+
+    @left.got_will_appear.should == true
+    wait(0.5) {
+      @left.got_did_appear.should == true
+    }
+  end
+
 end
