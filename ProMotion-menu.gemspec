@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.license       = "MIT"
 
   s.add_dependency "motion-cocoapods", "~> 1"
-  s.add_dependency "ProMotion", "~> 2"
+  s.add_dependency "ProMotion", "~> 3"
 
   s.add_development_dependency "rake", "~> 12"
   s.add_development_dependency "motion-stump", "~> 0.3"
