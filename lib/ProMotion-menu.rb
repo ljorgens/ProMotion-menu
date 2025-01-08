@@ -6,6 +6,7 @@ require 'motion-cocoapods'
 require 'ProMotion'
 
 Motion::Project::App.setup do |app|
+  app.files.flatten!
   core_lib = File.join(File.dirname(__FILE__), 'ProMotion/menu')
   insert_point = app.files.find_index { |file| file =~ /^(?:\.\/)?app\// } || 0
 
@@ -18,7 +19,7 @@ Motion::Project::App.setup do |app|
     "#{core_lib}/drawer.rb" => [ "#{core_lib}/visibility.rb", "#{core_lib}/gestures.rb" ],
     "#{core_lib}/delegate.rb" => [ "#{core_lib}/drawer.rb" ],
   })
-  
+
   app.pods do
     pod 'MMDrawerController', '~> 0.5'
   end
