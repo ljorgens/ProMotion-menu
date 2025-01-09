@@ -6,3 +6,4 @@ build
 vendor/Pods/
 Gemfile.lock
 .idea
+build-log
